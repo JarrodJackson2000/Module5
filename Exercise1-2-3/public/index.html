@@ -1,0 +1,75 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Welcome to Demo server</p>
+    <a href="/Test/Home">Home</a>
+    <a href="/Test/Contact">Contact</a>
+    <a href="/Test/About">About</a>
+    <h1>Calculator</h1>
+    <label>Number1: <input type="text" id="txtNum1" /> </label><br />
+    <label>Number2: <input type="text" id="txtNum2" /> </label><br />
+    <button onclick="ServerCalculatorAdd()">Add</button>
+    <button onclick="ServerCalculatorMultiply()">Multiply</button>
+    <button onclick="ServerCalculatorDivide()">Divide</button>
+    <button onclick="ServerCalculatorSubtract()">Subtract</button><br />
+    <label>Result:</label><label id="lblResult"></label>
+  </body>
+
+  <script>
+    function ServerCalculatorAdd() {
+      let num1 = document.getElementById("txtNum1").value;
+      let num2 = document.getElementById("txtNum2").value;
+
+      fetch(`http://localhost:3000/Calculator/Add?num1=${num1}&num2=${num2}`)
+        .then((response) => response.json())
+        .then(
+          (result) =>
+            (document.getElementById("lblResult").innerText = result.res)
+        );
+    }
+
+    function ServerCalculatorMultiply() {
+      let num1 = document.getElementById("txtNum1").value;
+      let num2 = document.getElementById("txtNum2").value;
+
+      fetch(
+        `http://localhost:3000/Calculator/Multiply?num1=${num1}&num2=${num2}`
+      )
+        .then((response) => response.json())
+        .then(
+          (result) =>
+            (document.getElementById("lblResult").innerText = result.res)
+        );
+    }
+
+    function ServerCalculatorDivide() {
+      let num1 = document.getElementById("txtNum1").value;
+      let num2 = document.getElementById("txtNum2").value;
+
+      fetch(`http://localhost:3000/Calculator/Divide?num1=${num1}&num2=${num2}`)
+        .then((response) => response.json())
+        .then(
+          (result) =>
+            (document.getElementById("lblResult").innerText = result.res)
+        );
+    }
+
+    function ServerCalculatorSubtract() {
+      let num1 = document.getElementById("txtNum1").value;
+      let num2 = document.getElementById("txtNum2").value;
+
+      fetch(
+        `http://localhost:3000/Calculator/Subtract?num1=${num1}&num2=${num2}`
+      )
+        .then((response) => response.json())
+        .then(
+          (result) =>
+            (document.getElementById("lblResult").innerText = result.res)
+        );
+    }
+  </script>
+</html>
