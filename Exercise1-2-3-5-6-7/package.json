@@ -1,0 +1,19 @@
+{
+  "name": "module5",
+  "version": "1.0.0",
+  "description": "Module 5 work will be stored here",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "npx nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.1",
+    "supertest": "^7.0.0"
+  }
+}
