@@ -1,4 +1,4 @@
-const Logger = require("../library/loggingLibrary");
+const Logger = require("./loggingLibrary");
 const thisLogger = new Logger();
 
 class Calculator {
