@@ -14,6 +14,7 @@ const Multiply = (req, res) => {
   let number1 = parseInt(req.query.num1);
   let number2 = parseInt(req.query.num2);
   let result = myCalc.multiply(number1, number2);
+  console.log(result);
   res.status(200);
   res.send({ res: result });
 };

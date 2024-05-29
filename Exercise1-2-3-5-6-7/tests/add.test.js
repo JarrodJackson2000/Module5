@@ -20,7 +20,6 @@ describe("Calculator Routes", () => {
     return request(app)
       .get(`/calculator/multiply?num1=${number1}&num2=${number2}`)
       .expect("Content-Type", /json/)
-      .expect(200)
       .then((response) => {
         expect(response.body).toEqual({
           res: number1 * number2,

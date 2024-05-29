@@ -14,6 +14,9 @@ class Calculator {
   multiply(num1, num2) {
     thisLogger.log(this.id); // public method calling private method
     const value = num1 * num2;
+    console.log(num1);
+    console.log(num2);
+    console.log(value);
     return value;
   }
   divide(num1, num2) {
