@@ -17,4 +17,8 @@ app.use("/Test", myAppRouter);
 
 app.use("/users", userRouter);
 
+const swaggerUi = require("swagger-ui-express");
+swaggerDocument = require("./swagger.json");
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 module.exports = app;
