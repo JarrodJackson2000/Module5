@@ -1,0 +1,36 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "My E-commerce Project",
+    "description": "My FakeStore Application API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "FakeStore API",
+      "description": "API for mock data for a E-commerce site"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/Data/Retrieve": {
+      "get": {
+        "tags": ["Mock Data Retrieval"],
+        "summary": "Requests data from FakeStore API and responds with an object",
+        "responses": {
+          "200": {
+            "description": "This service allows you to retrieve mock data for an E-commerce website"
+          }
+        }
+      }
+    }
+  }
+}

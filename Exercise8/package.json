@@ -3,7 +3,9 @@
     "axios": "^1.7.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "nodemon": "^3.1.2"
+    "nodemon": "^3.1.2",
+    "swagger": "^0.7.5",
+    "swagger-ui-express": "^5.0.0"
   },
   "name": "exercise8",
   "version": "1.0.0",
