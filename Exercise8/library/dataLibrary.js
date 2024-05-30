@@ -3,15 +3,13 @@ const axios = require("axios");
 class Retriever {
   constructor() {}
   async retrieveData() {
-    let data = await this.#retrieve();
-    console.log("Some text");
-    return data;
+    let result = await this.#retrieve();
+    return result;
   }
   async #retrieve() {
-    await axios.get("https://fakestoreapi.com/products").then((response) => {
-      console.log("retrieve called");
-      return response.data;
-    });
+    const response = axios.get("https://fakestoreapi.com/products");
+    let result = await response;
+    return result.data;
   }
 }
 module.exports = { Retriever };

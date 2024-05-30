@@ -4,13 +4,13 @@ let categoriesArray = [];
 
 async function fetchData() {
   const response = await fetch("http://localhost:3000/Data/Retrieve");
-  jsonData = response.json();
+  jsonData = await response.json();
 }
 
 async function handleData() {
   await fetchData();
   const categories = new Set();
-  for (const product of jsonData) {
+  for (const product of jsonData.res) {
     categories.add(product.category);
   }
   categoriesArray = Array.from(categories);
@@ -33,8 +33,8 @@ async function addDropdown() {
 
 async function addCard() {
   await addDropdown();
-  alert(jsonData);
-  jsonData.forEach((data) => {
+
+  jsonData.res.forEach((data) => {
     const cardTemplate = document
       .getElementById("cardTemplate")
       .content.cloneNode(true);
@@ -57,7 +57,7 @@ async function addCard() {
 function organiseCategory(categoryText) {
   document.getElementById("insertTemplate").innerHTML = "";
   const categoryArray = [];
-  jsonData.forEach((data) => {
+  jsonData.res.forEach((data) => {
     if (data.category == categoryText) {
       categoryArray.push(data);
     }
@@ -88,7 +88,7 @@ function searchFunction() {
     .value.trim()
     .toLowerCase();
 
-  const filteredData = jsonData.filter((data) =>
+  const filteredData = jsonData.res.filter((data) =>
     data.title.toLowerCase().includes(searchTerm)
   );
 
